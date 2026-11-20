@@ -5,7 +5,7 @@ TAVARDT Italia
 Matrice Interattiva delle Minacce per Sistemi di Intelligenza Artificiale
 Matrice interattiva delle minacce e guida di mitigazione per modelli linguistici e sistemi di IA. Basato su OWASP LLM e MITRE ATLAS.
 
-Standard: Linee Guida Nazionali ed Europee per la Sicurezza dell IA e OWASP LLM
+Standard: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS
 Repository: https://github.com/TAVARDT-Italia/ai-threat-matrix-it
 Online Web App: https://tavardt-italia.github.io/ai-threat-matrix-it/
 """
@@ -19,9 +19,9 @@ from datetime import datetime
 THREAT_DEFINITIONS = [
     {"id": "LLM01", "code": "OWASP-LLM01", "title": "Iniezione di Prompt (Diretta e Indiretta)", "weight": 15, "default": "exposed"},
     {"id": "LLM02", "code": "OWASP-LLM02", "title": "Fuga di Informazioni Riservate", "weight": 12, "default": "partial"},
-    {"id": "LLM03", "code": "OWASP-LLM03", "title": "Vulnerabilita della Supply Chain", "weight": 10, "default": "exposed"},
+    {"id": "LLM03", "code": "OWASP-LLM03", "title": "Vulnerabilità della Supply Chain", "weight": 10, "default": "exposed"},
     {"id": "LLM04", "code": "OWASP-LLM04", "title": "Avvelenamento di Dati e Modelli", "weight": 10, "default": "exposed"},
-    {"id": "LLM05", "code": "OWASP-LLM05", "title": "Gestione Inadeguata dell Output", "weight": 12, "default": "exposed"},
+    {"id": "LLM05", "code": "OWASP-LLM05", "title": "Gestione Inadeguata dell'Output", "weight": 12, "default": "exposed"},
     {"id": "LLM06", "code": "OWASP-LLM06", "title": "Eccessiva Autonomia degli Agenti", "weight": 14, "default": "exposed"},
     {"id": "LLM07", "code": "OWASP-LLM07", "title": "Fuga del Prompt di Sistema", "weight": 8,  "default": "defended"},
     {"id": "LLM08", "code": "OWASP-LLM08", "title": "Debolezze negli Embedding e Vettori", "weight": 7,  "default": "partial"},
@@ -79,7 +79,7 @@ def generate_blueprint_md(evaluation):
     md.append(f"- **Organization**: TAVARDT Italia")
     md.append(f"- **Evaluation Date**: {ts} UTC")
     md.append(f"- **Architecture Profile**: {evaluation['architecture'].upper()}")
-    md.append(f"- **Compliance Standard**: Linee Guida Nazionali ed Europee per la Sicurezza dell IA e OWASP LLM")
+    md.append(f"- **Compliance Standard**: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS")
     md.append(f"- **Hardening Score**: {evaluation['score']} / 100")
     md.append(f"- **Defensive Posture**: {evaluation['posture']}")
     md.append("")
@@ -99,12 +99,12 @@ def generate_blueprint_md(evaluation):
     return "\n".join(md)
 
 def main():
-    parser = argparse.ArgumentParser(description="Valutatore di Postura di Sicurezza dell Intelligenza Artificiale e Generatore di Blueprint.")
-    parser.add_argument("--arch", choices=["agent", "rag", "chat", "api"], default="agent", help="Profilo architetturale della soluzione (agent, rag, chat, api)")
-    parser.add_argument("--profile", help="Percorso del file JSON con lo stato dei controlli difensivi")
-    parser.add_argument("--export-blueprint", help="Esporta blueprint di mitigazione in file Markdown")
-    parser.add_argument("--strict", action="store_true", help="Termina con codice 1 se e presente qualsiasi vettore vulnerabile")
-    parser.add_argument("--json", action="store_true", help="Mostra output in formato JSON strutturato")
+    parser = argparse.ArgumentParser(description="Valutatore della Postura di Sicurezza in Intelligenza Artificiale e Generatore di Blueprint.")
+    parser.add_argument("--arch", choices=["agent", "rag", "chat", "api"], default="agent", help="Profilo architetturale dell'applicazione (agent, rag, chat, api)")
+    parser.add_argument("--profile", help="Percorso del file JSON con stati dei controlli difensivi")
+    parser.add_argument("--export-blueprint", help="Esportare il blueprint difensivo in formato Markdown")
+    parser.add_argument("--strict", action="store_true", help="Terminare con codice 1 se è presente un vettore vulnerabile")
+    parser.add_argument("--json", action="store_true", help="Mostrare l'output in formato JSON strutturato")
 
     args = parser.parse_args()
 
@@ -128,14 +128,14 @@ def main():
         bp_content = generate_blueprint_md(eval_res)
         with open(args.export_blueprint, "w", encoding="utf-8") as bf:
             bf.write(bp_content)
-        print(f"Blueprint di mitigazione salvato con successo in: {args.export_blueprint}")
+        print(f"Blueprint difensivo salvato con successo in: {args.export_blueprint}")
 
     if args.json:
         print(json.dumps(eval_res, indent=2, ensure_ascii=False))
     else:
         print("=" * 64)
         print(f"MATRICE DELLE MINACCE IA: TAVARDT Italia")
-        print(f"Standard: Linee Guida Nazionali ed Europee per la Sicurezza dell IA e OWASP LLM")
+        print(f"Standard: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS")
         print(f"Architecture: {eval_res['architecture'].upper()}")
         print(f"Hardening Score: {eval_res['score']} / 100")
         print(f"Defensive Posture: {eval_res['posture']}")
