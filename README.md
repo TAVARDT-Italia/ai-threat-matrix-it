@@ -7,43 +7,43 @@
 
 Matrice interattiva delle minacce e guida di mitigazione per modelli linguistici e sistemi di IA. Basato su OWASP LLM e MITRE ATLAS.
 
-Sviluppato per organizzazioni e professionisti in **Italia**, questo repository fornisce una matrice specialistica per la valutazione della sicurezza e la formulazione di piani di blindatura per sistemi con intelligenza artificiale generativa e modelli linguistici.
+Progettato per organizzazioni, ricercatori e team di ingegneria in **Italia**, questo repository fornisce una matrice strutturata per la valutazione della postura difensiva e la generazione di blueprint di blindatura per modelli linguistici e agenti autonomi di Intelligenza Artificiale.
 
 ---
 
-## Modalita Operative
+## Modalità di Utilizzo
 
 ### 1. Applicazione Web nel Browser (GitHub Pages)
-Interfaccia visiva accessibile direttamente dal browser web:
+Accedi alla versione interattiva direttamente tramite browser:
 - **Indirizzo Ufficiale**: [https://tavardt-italia.github.io/ai-threat-matrix-it/](https://tavardt-italia.github.io/ai-threat-matrix-it/)
-- **Riservatezza Totale**: Esecuzione interamente nel motore JavaScript locale. Nessuna informazione architetturale viene trasmessa a server esterni.
+- **Privacy Integrata**: Elaborazione eseguita al 100% nel motore JavaScript del browser. Nessun dato architetturale o risultato viene trasmesso a server remoti.
 
-### 2. Strumento da Linea di Comando (CLI)
-Per pipeline di integrazione continua (CI/CD) o verifiche locali:
+### 2. Utilità da Riga di Comando (CLI)
+Per verifiche automatizzate nelle pipeline CI/CD o controlli locali:
 
 ```bash
-# Valutazione di base per profilo di agente autonomo
+# Valutazione standard con profilo agente autonomo
 python threat_matrix_evaluator.py --arch agent
 
-# Esportazione di Blueprint Difensivo in formato Markdown
+# Esportazione del Blueprint Difensivo in formato Markdown
 python threat_matrix_evaluator.py --arch rag --export-blueprint hardening-blueprint.md
 
-# Modalita rigorosa per gate di sicurezza (esce con codice 1 se vi sono vulnerabilita)
+# Validazione mediante file di profilo dei controlli difensivi
 python threat_matrix_evaluator.py --profile profile.json --strict
 
-# Esportazione in formato JSON
+# Output strutturato in formato JSON per integrazioni
 python threat_matrix_evaluator.py --arch agent --json
 ```
 
 ---
 
-## 10 Vettori di Minaccia Ispezionati (OWASP Top 10 for LLMs)
+## 10 Vettori Critici di Rischio (OWASP Top 10 for LLMs)
 
-1. **Iniezione di Prompt (Diretta e Indiretta)**: Manipolazione delle istruzioni del modello tramite input ingannevoli o contesto esterno.
+1. **Iniezione di Prompt (Diretta e Indireta)**: Manipolazione delle istruzioni del modello tramite input ingannevoli o contesto esterno.
 2. **Fuga di Informazioni Riservate**: Diffusione involontaria di dati sensibili o credenziali nelle risposte generate.
-3. **Vulnerabilita della Supply Chain**: Librerie non verificate, estensioni vulnerabili o modelli privi di tracciabilita.
+3. **Vulnerabilità della Supply Chain**: Librerie non verificate, estensioni vulnerabili o modelli privi di tracciabilità.
 4. **Avvelenamento di Dati e Modelli**: Alterazione fraudolenta dei dataset di addestramento o delle basi documentali.
-5. **Gestione Inadeguata dell Output**: Inoltro diretto dell output del modello a interpreti di script o motori database.
+5. **Gestione Inadeguata dell'Output**: Inoltro diretto dell'output del modello a interpreti di script o motori database.
 6. **Eccessiva Autonomia degli Agenti**: Strumenti dotati di permessi critici privi di presidio umano o limiti di esecuzione.
 7. **Fuga del Prompt di Sistema**: Estrazione non autorizzata delle istruzioni riservate configurate nel prompt iniziale.
 8. **Debolezze negli Embedding e Vettori**: Inserimento di record malevoli nel database vettoriale del RAG per manipolare il recupero.
@@ -52,7 +52,9 @@ python threat_matrix_evaluator.py --arch agent --json
 
 ---
 
-## Integrazione con GitHub Actions
+## Integrazione CI/CD (GitHub Actions)
+
+Esempio di pipeline per la verifica continua della postura di sicurezza:
 
 ```yaml
 name: AI Threat Matrix Gate
@@ -63,30 +65,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Installa Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Esegui Valutazione della Matrice di Minacce
+      - name: Run AI Threat Matrix Assessment
         run: |
           python threat_matrix_evaluator.py --arch agent --strict
 ```
 
 ---
 
-## Standard Istituzionali e Conformita
+## Conformità e Standard Tecnici
 
 - **Giurisdizione**: Italia
-- **Quadro Normativo**: Linee Guida Nazionali ed Europee per la Sicurezza dell IA e OWASP LLM
-- **Organizzazione**: [TAVARDT-Italia](https://github.com/TAVARDT-Italia)
+- **Standard Normativo**: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS
+- **Organizzazione Responsabile**: [TAVARDT-Italia](https://github.com/TAVARDT-Italia)
 
-## Portali e Risorse TAVARDT
+## Ecosistema TAVARDT e Portali Ufficiali
 
-- **Portale Principale**: [https://ag.tavardt.com/it/](https://ag.tavardt.com/it/)
-- **Strumenti di Sicurezza Informatica**: [https://tools.tavardt.com/it/](https://tools.tavardt.com/it/)
-- **Contatto Tecnico**: [https://ag.tavardt.com/it/contatto/](https://ag.tavardt.com/it/contatto/)
+- **Portale Istituzionale**: [https://ag.tavardt.com/it/](https://ag.tavardt.com/it/)
+- **Centro Strumenti TAVARDT**: [https://tools.tavardt.com/it/](https://tools.tavardt.com/it/)
+- **Canale di Supporto Tecnico**: [https://ag.tavardt.com/it/contatto/](https://ag.tavardt.com/it/contatto/)
 
 ---
 
 ### Licenza
-Rilasciato sotto licenza MIT. Per maggiori dettagli consultare il file [LICENSE](LICENSE).
+Rilasciato sotto Licenza MIT. Consultare il file [LICENSE](LICENSE) per i dettagli completi.
