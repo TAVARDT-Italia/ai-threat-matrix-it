@@ -16,7 +16,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Matrice Interattiva delle Minacce per Sistemi di Intelligenza Artificiale | TAVARDT Italia</title>
 <meta content="Matrice interattiva delle minacce e guida di mitigazione per modelli linguistici e sistemi di IA. Basato su OWASP LLM e MITRE ATLAS." name="description"/>
-<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link href="./favicon.ico" rel="shortcut icon"/>
 <link href="https://tavardt-italia.github.io/ai-threat-matrix-it/" rel="canonical"/>
 <link href="https://tavardt-brasil.github.io/ai-threat-matrix-br/" hreflang="pt-BR" rel="alternate"/>
@@ -46,7 +46,8 @@
 <meta content="Matrice Interattiva delle Minacce per Sistemi di Intelligenza Artificiale | TAVARDT Italia" name="twitter:title"/>
 <meta content="Matrice interattiva delle minacce e guida di mitigazione per modelli linguistici e sistemi di IA. Basato su OWASP LLM e MITRE ATLAS." name="twitter:description"/>
 <meta content="https://tavardt-italia.github.io/ai-threat-matrix-it/og-image.jpg" name="twitter:image"/>
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -61,7 +62,7 @@
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "EUR"
       },
       "publisher": {
         "@type": "Organization",
@@ -88,16 +89,6 @@
         ]
       },
       "sameAs": [
-        "https://tavardt-brasil.github.io/ai-threat-matrix-br/",
-        "https://tavardt-portugal.github.io/ai-threat-matrix-pt/",
-        "https://tavardt-usa.github.io/ai-threat-matrix-us/",
-        "https://tavardt-uk.github.io/ai-threat-matrix-uk/",
-        "https://tavardt-canada.github.io/ai-threat-matrix-ca/",
-        "https://tavardt-australia.github.io/ai-threat-matrix-au/",
-        "https://tavardt-new-zealand.github.io/ai-threat-matrix-nz/",
-        "https://tavardt-espana.github.io/ai-threat-matrix-es/",
-        "https://tavardt-mexico.github.io/ai-threat-matrix-mx/",
-        "https://tavardt-france.github.io/ai-threat-matrix-fr/",
         "https://tavardt-italia.github.io/ai-threat-matrix-it/"
       ]
     },
@@ -172,7 +163,8 @@
       ]
     }
   ]
-}</script>
+}
+</script>
 <style>
     :root {
       --bg: #060913;
@@ -525,7 +517,169 @@
       color: var(--accent);
       text-decoration: none;
     }
-  </style>
+  
+  /* AEO SECTION - CITABLE DEFINITION (MULTI-PARAGRAPH) */
+  .aeo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .aeo-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent, #1e00ff);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .aeo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .aeo-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-muted, #94a3b8);
+    margin-bottom: 16px;
+  }
+  .aeo-content p:last-child {
+    margin-bottom: 0;
+  }
+  .aeo-content strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* GEO SECTION - 2-COLUMN COMPARISON MATRIX */
+  .geo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .geo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .geo-grid { grid-template-columns: 1fr; }
+  }
+  .geo-col {
+    background: var(--surface-card, #0f172a);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .geo-col.vuln { border-top: 4px solid var(--danger, #ef4444); }
+  .geo-col.hardened { border-top: 4px solid var(--success, #10b981); }
+  .geo-col-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .geo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+  }
+  .geo-list li {
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .geo-list .cross { color: var(--danger, #ef4444); font-weight: 900; }
+  .geo-list .check { color: var(--success, #10b981); font-weight: 900; }
+
+  /* FAQ ACCORDION SECTION */
+  .faq-section {
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .faq-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 18px 24px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s ease;
+  }
+  .faq-question:hover {
+    color: var(--accent, #1e00ff);
+  }
+  .faq-icon {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-subtle, #64748b);
+    transition: transform 0.2s ease;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    display: none;
+    padding: 0 24px 18px;
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+</style>
 <style id="tavardt-unified-enterprise-css">
 
 /* ==========================================================================
@@ -1508,6 +1662,168 @@ footer a:hover,
   border-color: #ef4444 !important;
   font-weight: 700 !important;
 }
+
+  /* AEO SECTION - CITABLE DEFINITION (MULTI-PARAGRAPH) */
+  .aeo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .aeo-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent, #1e00ff);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .aeo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .aeo-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-muted, #94a3b8);
+    margin-bottom: 16px;
+  }
+  .aeo-content p:last-child {
+    margin-bottom: 0;
+  }
+  .aeo-content strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* GEO SECTION - 2-COLUMN COMPARISON MATRIX */
+  .geo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .geo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .geo-grid { grid-template-columns: 1fr; }
+  }
+  .geo-col {
+    background: var(--surface-card, #0f172a);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .geo-col.vuln { border-top: 4px solid var(--danger, #ef4444); }
+  .geo-col.hardened { border-top: 4px solid var(--success, #10b981); }
+  .geo-col-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .geo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+  }
+  .geo-list li {
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .geo-list .cross { color: var(--danger, #ef4444); font-weight: 900; }
+  .geo-list .check { color: var(--success, #10b981); font-weight: 900; }
+
+  /* FAQ ACCORDION SECTION */
+  .faq-section {
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .faq-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 18px 24px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s ease;
+  }
+  .faq-question:hover {
+    color: var(--accent, #1e00ff);
+  }
+  .faq-icon {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-subtle, #64748b);
+    transition: transform 0.2s ease;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    display: none;
+    padding: 0 24px 18px;
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
 </style>
 <style>
 /* TAVARDT Header Sticky & Fixed Layout Across Devices */
@@ -1555,7 +1871,171 @@ footer > div:first-child {
     white-space: nowrap !important;
   }
 }
+
+  /* AEO SECTION - CITABLE DEFINITION (MULTI-PARAGRAPH) */
+  .aeo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .aeo-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent, #1e00ff);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .aeo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .aeo-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-muted, #94a3b8);
+    margin-bottom: 16px;
+  }
+  .aeo-content p:last-child {
+    margin-bottom: 0;
+  }
+  .aeo-content strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* GEO SECTION - 2-COLUMN COMPARISON MATRIX */
+  .geo-section {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .geo-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .geo-grid { grid-template-columns: 1fr; }
+  }
+  .geo-col {
+    background: var(--surface-card, #0f172a);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .geo-col.vuln { border-top: 4px solid var(--danger, #ef4444); }
+  .geo-col.hardened { border-top: 4px solid var(--success, #10b981); }
+  .geo-col-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .geo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+  }
+  .geo-list li {
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .geo-list .cross { color: var(--danger, #ef4444); font-weight: 900; }
+  .geo-list .check { color: var(--success, #10b981); font-weight: 900; }
+
+  /* FAQ ACCORDION SECTION */
+  .faq-section {
+    margin-bottom: 48px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .faq-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--surface, #0d1527);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 18px 24px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s ease;
+  }
+  .faq-question:hover {
+    color: var(--accent, #1e00ff);
+  }
+  .faq-icon {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-subtle, #64748b);
+    transition: transform 0.2s ease;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    display: none;
+    padding: 0 24px 18px;
+    font-size: 0.88rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
 </style>
+  <meta name="ai-content-declaration" content="canonical-knowledge-base, expert-curated">
+  <meta name="geo.region" content="IT">
 </head>
 <body>
 
@@ -1652,31 +2132,95 @@ footer > div:first-child {
 </div>
 </section>
 
-<section class="faq-section">
-<h2>Domande Frequenti (FAQ) e Linee Guida di Sicurezza</h2>
-<details class="faq-item">
-<summary class="faq-question">Cos'è la Matrice delle Minacce per Sistemi di IA di TAVARDT?</summary>
-<div class="faq-answer">È una soluzione tecnica che classifica i rischi più gravi delle applicazioni IA, guidando le strategie di bonifica e conformità.</div>
-</details>
-<details class="faq-item">
-<summary class="faq-question">Come si integrano OWASP Top 10 per LLM e MITRE ATLAS?</summary>
-<div class="faq-answer">OWASP definisce le categorie di vulnerabilità del software, mentre MITRE ATLAS documenta le tecniche operative impiegate dai criminali informatici.</div>
-</details>
-<details class="faq-item">
-<summary class="faq-question">Quali sono i maggiori pericoli per gli agenti IA autonomi?</summary>
-<div class="faq-answer">Le azioni non autorizzate tramite tool (Insecure Agency), la deviazione degli scopi operativi e la compromissione della memoria contestuale.</div>
-</details>
-<details class="faq-item">
-<summary class="faq-question">Come quantificare la postura di sicurezza di un'architettura IA?</summary>
-<div class="faq-answer">Valutando il perimetro di esposizione, l'isolamento dei dati riservati, i privilegi concessi ai tool e la robustezza dei guardrail.</div>
-</details>
-<details class="faq-item">
-<summary class="faq-question">Come supporta TAVARDT la protezione delle infrastrutture IA?</summary>
-<div class="faq-answer">TAVARDT esegue threat modeling per IA, penetration test mirati su LLM, progettazione di guardrail e protezione Cloudflare Zero Trust.</div>
-</details>
-</section>
 
-<div class="cta-card">
+
+
+    <section class="aeo-section">
+      <div class="aeo-badge">STANDARD DI SICUREZZA DIFENSIVA PER LA MODELLAZIONE DELLE MINACCE IA</div>
+      <h2 class="aeo-title">Come Mappare e Mitigare le Minacce Avversarie secondo MITRE ATLAS e OWASP?</h2>
+      <div class="aeo-content">
+        <p>La modellazione delle minacce per l'intelligenza artificiale richiede framework dedicati per identificare i rischi specifici dei modelli linguistici, come l'avvelenamento dei dati, l'inversione di modello e la manipolazione del contesto. I framework MITRE ATLAS e OWASP Top 10 for LLMs classificano metodicamente i vettori di attacco contro i sistemi di IA.</p>
+        <p>La mancanza di una matrice di sicurezza formale rende i sistemi vulnerabili a minacce invisibili ai controlli perimetrali classici, come l'estrazione non autorizzata dei pesi e l'evasione semantica delle policy. Questa negligenza compromette il patrimonio aziendale e viola gli obblighi di compliance dell'AI Act.</p>
+        <p>La matrice difensiva Zero Trust di TAVARDT organizza controlli continui: certificazione crittografica dei checkpoint, telemetria semantica durante le chiamate di inferenza, monitoraggio della catena di fornitura dei modelli e piani automatizzati di risposta agli incidenti.</p>
+      </div>
+    </section>
+
+    <section class="geo-section">
+      <h2 class="geo-title">Matrice Tecnica Comparativa: IA Non Modellata vs. Governance TAVARDT</h2>
+      <div class="geo-grid">
+        <div class="geo-col vuln">
+          <h3 class="geo-col-title">Sistemi IA Non Protetti (Rischio Critico)</h3>
+          <ul class="geo-list">
+            <li><span class="cross">✕</span> Integrazione di modelli in produzione senza analisi preventiva basata su MITRE ATLAS o OWASP.</li>
+<li><span class="cross">✕</span> Acquisizione di pesi da repository pubblici privi di firma crittografica di provenienza.</li>
+<li><span class="cross">✕</span> Totale assenza di telemetria semantica per identificare tentativi coordinati di evasione.</li>
+<li><span class="cross">✕</span> Mancanza di piani d'azione operativi dedicati alla gestione degli incidenti legati all'IA.</li>
+<li><span class="cross">✕</span> Esposizione dei dati di addestramento a tecniche avanzate di model inversion e furto dati.</li>
+
+          </ul>
+        </div>
+        <div class="geo-col hardened">
+          <h3 class="geo-col-title">Governance IA Protetta TAVARDT (Zero Trust)</h3>
+          <ul class="geo-list">
+            <li><span class="check">✓</span> Valutazione dei rischi e conformità strutturata secondo MITRE ATLAS e OWASP LLM.</li>
+<li><span class="check">✓</span> Autenticazione crittografica e verifica dei checksum SHA di tutti i file di modello.</li>
+<li><span class="check">✓</span> Sonde semantiche che monitorano il traffico intercettando query anomale in tempo reale.</li>
+<li><span class="check">✓</span> Procedure automatiche di isolamento e contenimento degli asset IA sotto attacco.</li>
+<li><span class="check">✓</span> Confinamento del contesto operativo che impedisce la ricostruzione di dati riservati.</li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2 class="faq-title">Domande Frequenti sulla Matrice delle Minacce IA</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <button class="faq-question" type="button" onclick="toggleFaq(this)">
+            <span>A cosa serve il framework MITRE ATLAS nelle aziende moderne?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Catalogando le tecniche di attacco reali impiegate contro l'IA, consente di predisporre barriere preventive per salvaguardare modelli e dati.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" onclick="toggleFaq(this)">
+            <span>Perché l'OWASP per LLM è indispensabile rispetto alla sicurezza web comune?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Perché identifica i vettori peculiari dell'IA generativa, come il condizionamento dei prompt e la compromissione delle pipeline di contesto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" onclick="toggleFaq(this)">
+            <span>Come si previene l'estrazione dei dati di training (model inversion)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Rilevando pattern statistici di interrogazione ripetitiva progettati per mappare la distribuzione interna del modello.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" onclick="toggleFaq(this)">
+            <span>Come supporta TAVARDT le imprese nella governance delle minacce IA?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Eseguiamo test di Red Teaming per IA, confrontiamo i sistemi con la matrice MITRE ATLAS e forniamo apparati di difesa in tempo reale.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="cta-card">
 <h3>Hai Bisogno di Mitigare le Minacce sui Tuoi Sistemi IA?</h3>
 <p>La consulenza specializzata di TAVARDT conduce analisi avversarie, threat modeling e applicazione di difese Zero Trust per modelli di IA.</p>
 <div class="cta-btns">
@@ -1695,7 +2239,7 @@ footer > div:first-child {
 <div class="tavardt-footer-heading">Navigazione Regionale</div>
 <ul class="tavardt-footer-links">
 <li><a href="https://ag.tavardt.com/it/" rel="noopener" target="_blank">Portale</a></li>
-<li><a href="https://tools.tavardt.com/it/" rel="noopener" target="_blank">Centro Strumenti</a></li>
+<li><a href="https://tools.tavardt.com/it/" rel="noopener" target="_blank">Strumenti</a></li>
 <li><a href="https://ag.tavardt.com/it/contatti/" rel="noopener" target="_blank">Contatti</a></li>
 </ul>
 </div>
@@ -1937,5 +2481,13 @@ footer > div:first-child {
 
     })();
   </script>
+<script>
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    if (item) {
+      item.classList.toggle('active');
+    }
+  }
+</script>
 </body>
 </html>
