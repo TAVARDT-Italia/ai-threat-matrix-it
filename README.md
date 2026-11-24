@@ -2,14 +2,14 @@
 
 [![Live Demo](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-38bdf8?style=for-the-badge)](https://tavardt-italia.github.io/ai-threat-matrix-it/)
 [![Standard](https://img.shields.io/badge/Standard-OWASP%20LLM%20%26%20MITRE-3b82f6?style=for-the-badge)](https://tavardt-italia.github.io/ai-threat-matrix-it/)
-[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Client--Side-10b981?style=for-the-badge)](https://tavardt-italia.github.io/ai-threat-matrix-it/)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Client-Side-10b981?style=for-the-badge)](https://tavardt-italia.github.io/ai-threat-matrix-it/)
 [![License](https://img.shields.io/badge/License-MIT-slate?style=for-the-badge)](LICENSE)
 
 Matrice interattiva delle minacce e guida di mitigazione per modelli linguistici e sistemi di IA. Basato su OWASP LLM e MITRE ATLAS.
 
 Progettato per organizzazioni, ricercatori e team di ingegneria in **Italia**, questo repository fornisce una matrice strutturata per la valutazione della postura difensiva e la generazione di blueprint di blindatura per modelli linguistici e agenti autonomi di Intelligenza Artificiale.
 
----
+***
 
 ## Modalità di Utilizzo
 
@@ -23,19 +23,19 @@ Per verifiche automatizzate nelle pipeline CI/CD o controlli locali:
 
 ```bash
 # Valutazione standard con profilo agente autonomo
-python threat_matrix_evaluator.py --arch agent
+python threat_matrix_evaluator.py -arch agent
 
 # Esportazione del Blueprint Difensivo in formato Markdown
-python threat_matrix_evaluator.py --arch rag --export-blueprint hardening-blueprint.md
+python threat_matrix_evaluator.py -arch rag -export-blueprint hardening-blueprint.md
 
 # Validazione mediante file di profilo dei controlli difensivi
-python threat_matrix_evaluator.py --profile profile.json --strict
+python threat_matrix_evaluator.py -profile profile.json -strict
 
 # Output strutturato in formato JSON per integrazioni
-python threat_matrix_evaluator.py --arch agent --json
+python threat_matrix_evaluator.py -arch agent -json
 ```
 
----
+***
 
 ## 10 Vettori Critici di Rischio (OWASP Top 10 for LLMs)
 
@@ -50,7 +50,7 @@ python threat_matrix_evaluator.py --arch agent --json
 9. **Allucinazioni e Disinformazione Critica**: Generazione di dati falsi in processi decisionali o operativi critici.
 10. **Consumo Illimitato di Risorse**: Esaurimento delle risorse di calcolo o costi anomali causati da query massive.
 
----
+***
 
 ## Integrazione CI/CD (GitHub Actions)
 
@@ -71,10 +71,10 @@ jobs:
           python-version: '3.11'
       - name: Run AI Threat Matrix Assessment
         run: |
-          python threat_matrix_evaluator.py --arch agent --strict
+          python threat_matrix_evaluator.py -arch agent -strict
 ```
 
----
+***
 
 ## Conformità e Standard Tecnici
 
@@ -84,11 +84,11 @@ jobs:
 
 ## Portali Ufficiali
 
-- **Portale Istituzionale**: [https://ag.tavardt.com/it/](https://ag.tavardt.com/it/)
-- **Centro Strumenti**: [https://tools.tavardt.com/it/](https://tools.tavardt.com/it/)
+- **Portale Istituzionale**: [Portal Institucional](https://ag.tavardt.com/it/)
+- **Centro Strumenti**: [Central de Ferramentas](https://tools.tavardt.com/it/)
 - **Canale di Supporto Tecnico**: [https://ag.tavardt.com/it/contatto/](https://ag.tavardt.com/it/contatto/)
 
----
+***
 
 ### Licenza
 Rilasciato sotto Licenza MIT. Consultare il file [LICENSE](LICENSE) per i dettagli completi.
