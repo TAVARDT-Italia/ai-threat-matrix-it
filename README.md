@@ -79,13 +79,8 @@ jobs:
 ## Conformità e Standard Tecnici
 
 - **Standard Normativo**: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS
-- **Organizzazione Responsabile**: [TAVARDT-Italia](https://github.com/TAVARDT-Italia)
 
-## Portali Ufficiali
 
-- **Portale Istituzionale**: [Portal Institucional](https://ag.tavardt.com/it/)
-- **Centro Strumenti**: [Central de Ferramentas](https://tools.tavardt.com/it/)
-- **Canale di Supporto Tecnico**: [https://ag.tavardt.com/it/contatto/](https://ag.tavardt.com/it/contatto/)
 
 ***
 
