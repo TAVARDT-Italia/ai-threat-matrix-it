@@ -80,12 +80,18 @@ jobs:
 
 - **Standard Normativo**: OWASP Top 10 per Applicazioni LLM e MITRE ATLAS
 
-
-
 ***
 
 ### Licenza
 Rilasciato sotto Licenza MIT. Consultare il file [LICENSE](LICENSE) per i dettagli completi.
+
+***
+
+## Link Utili
+
+* **Portale Aziendale:** https://ag.tavardt.com/it/
+* **Suite di Diagnostica:** https://tools.tavardt.com/it/
+* **Contatto Tecnico:** https://ag.tavardt.com/it/contatto/
 
 ***
 
